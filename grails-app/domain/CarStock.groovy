@@ -14,4 +14,8 @@ class CarStock {
 		carRegistration(nullable:false)		
 		reserved()
     }
+	String toString()
+	{
+		return "$id - $carRegistration"
+	}
 }
