@@ -86,9 +86,43 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name">Rate:</td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean:carStockInstance, field:'rate')}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name">Reserved:</td>
                             
                             <td valign="top" class="value">${fieldValue(bean:carStockInstance, field:'reserved')}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Date Created:</td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean:carStockInstance, field:'dateCreated')}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Last Updated:</td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean:carStockInstance, field:'lastUpdated')}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Reverved Detail:</td>
+                            
+                            <td  valign="top" style="text-align:left;" class="value">
+                                <ul>
+                                <g:each var="r" in="${carStockInstance.revervedDetail}">
+                                    <li><g:link controller="reservedDetail" action="show" id="${r.id}">${r?.encodeAsHTML()}</g:link></li>
+                                </g:each>
+                                </ul>
+                            </td>
                             
                         </tr>
                     

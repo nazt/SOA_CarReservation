@@ -30,9 +30,9 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Car:</td>
+                            <td valign="top" class="name">Identification Number:</td>
                             
-                            <td valign="top" class="value"><g:link controller="carStock" action="show" id="${reservedDetailInstance?.car?.id}">${reservedDetailInstance?.car?.encodeAsHTML()}</g:link></td>
+                            <td valign="top" class="value">${fieldValue(bean:reservedDetailInstance, field:'identificationNumber')}</td>
                             
                         </tr>
                     
@@ -40,6 +40,55 @@
                             <td valign="top" class="name">Driver Name:</td>
                             
                             <td valign="top" class="value">${fieldValue(bean:reservedDetailInstance, field:'driverName')}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Driver Age:</td>
+                            
+                            <td valign="top" class="value"><g:link controller="driverAgeList" action="show" id="${reservedDetailInstance?.driverAge?.id}">${reservedDetailInstance?.driverAge?.encodeAsHTML()}</g:link></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Phone Number:</td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean:reservedDetailInstance, field:'phoneNumber')}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Pickup City:</td>
+                            
+                            <td valign="top" class="value"><g:link controller="city" action="show" id="${reservedDetailInstance?.pickupCity?.id}">${reservedDetailInstance?.pickupCity?.encodeAsHTML()}</g:link></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Dropoff City:</td>
+                            
+                            <td valign="top" class="value"><g:link controller="city" action="show" id="${reservedDetailInstance?.dropoffCity?.id}">${reservedDetailInstance?.dropoffCity?.encodeAsHTML()}</g:link></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Pickup Date:</td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean:reservedDetailInstance, field:'pickupDate')}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Dropoff Date:</td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean:reservedDetailInstance, field:'dropoffDate')}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Car:</td>
+                            
+                            <td valign="top" class="value"><g:link controller="carStock" action="show" id="${reservedDetailInstance?.car?.id}">${reservedDetailInstance?.car?.encodeAsHTML()}</g:link></td>
                             
                         </tr>
                     

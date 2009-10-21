@@ -23,10 +23,16 @@
                         
                    	        <g:sortableColumn property="id" title="Id" />
                         
-                   	        <th>Car</th>
-                   	    
+                   	        <g:sortableColumn property="identificationNumber" title="Identification Number" />
+                        
                    	        <g:sortableColumn property="driverName" title="Driver Name" />
                         
+                   	        <th>Driver Age</th>
+                   	    
+                   	        <g:sortableColumn property="phoneNumber" title="Phone Number" />
+                        
+                   	        <th>Pickup City</th>
+                   	    
                         </tr>
                     </thead>
                     <tbody>
@@ -35,9 +41,15 @@
                         
                             <td><g:link action="show" id="${reservedDetailInstance.id}">${fieldValue(bean:reservedDetailInstance, field:'id')}</g:link></td>
                         
-                            <td>${fieldValue(bean:reservedDetailInstance, field:'car')}</td>
+                            <td>${fieldValue(bean:reservedDetailInstance, field:'identificationNumber')}</td>
                         
                             <td>${fieldValue(bean:reservedDetailInstance, field:'driverName')}</td>
+                        
+                            <td>${fieldValue(bean:reservedDetailInstance, field:'driverAge')}</td>
+                        
+                            <td>${fieldValue(bean:reservedDetailInstance, field:'phoneNumber')}</td>
+                        
+                            <td>${fieldValue(bean:reservedDetailInstance, field:'pickupCity')}</td>
                         
                         </tr>
                     </g:each>

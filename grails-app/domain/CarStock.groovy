@@ -4,6 +4,11 @@ class CarStock {
 	String model
 	String carRegistration
 	Boolean reserved
+	Date dateCreated
+	Date lastUpdated
+	Double rate
+	
+	
     static constraints = {
 		brand()
 		model()
@@ -12,7 +17,8 @@ class CarStock {
 		type()
 		engine()
 		fuel()
-		carRegistration(nullable:false)		
+		carRegistration(nullable:false)
+		rate()
 		reserved()
     }
 	String toString()

@@ -26,4 +26,13 @@ class CarReservationService {
 	{
 		Fuel.list() as Engine[]
 	}	
+	String echoBack(String input)
+	{
+		return "Hello" as String
+	}
+	CarStock[] searchCar(String colour,String engine,String fuel,String carType)
+	{
+		println colour 
+		CarStock.list() as CarStock[]
+	}
 }

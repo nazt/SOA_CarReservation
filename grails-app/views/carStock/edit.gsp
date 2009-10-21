@@ -103,10 +103,53 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                    <label for="rate">Rate:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:carStockInstance,field:'rate','errors')}">
+                                    <input type="text" id="rate" name="rate" value="${fieldValue(bean:carStockInstance,field:'rate')}" />
+                                </td>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                     <label for="reserved">Reserved:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:carStockInstance,field:'reserved','errors')}">
                                     <g:checkBox name="reserved" value="${carStockInstance?.reserved}" ></g:checkBox>
+                                </td>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="dateCreated">Date Created:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:carStockInstance,field:'dateCreated','errors')}">
+                                    <g:datePicker name="dateCreated" value="${carStockInstance?.dateCreated}" precision="minute" ></g:datePicker>
+                                </td>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="lastUpdated">Last Updated:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:carStockInstance,field:'lastUpdated','errors')}">
+                                    <g:datePicker name="lastUpdated" value="${carStockInstance?.lastUpdated}" precision="minute" ></g:datePicker>
+                                </td>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="revervedDetail">Reverved Detail:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:carStockInstance,field:'revervedDetail','errors')}">
+                                    
+<ul>
+<g:each var="r" in="${carStockInstance?.revervedDetail?}">
+    <li><g:link controller="reservedDetail" action="show" id="${r.id}">${r?.encodeAsHTML()}</g:link></li>
+</g:each>
+</ul>
+<g:link controller="reservedDetail" params="['carStock.id':carStockInstance?.id]" action="create">Add ReservedDetail</g:link>
+
                                 </td>
                             </tr> 
                         
