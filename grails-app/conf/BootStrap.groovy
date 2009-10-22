@@ -13,6 +13,13 @@ class BootStrap {
 		new Colour(colour:'Red').save()
 		new Colour(colour:'Blue').save()
 		new Colour(colour:'Green').save()
+		new ReservStatus(status:'Pending').save()
+		new ReservStatus(status:'Canceled').save()
+		new ReservStatus(status:'Paid').save()
+		new City(name:'Bangkok').save()
+		new City(name:'Nakhonsawan').save()
+		new DriverAgeList(age:'25+').save()
+		new DriverAgeList(age:'14-24').save()
      }
      def destroy = {
      }

@@ -2,18 +2,19 @@
 
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
-        <title>Edit ReservedDetail</title>
+        <g:set var="entityName" value="${message(code: 'reservedDetail.label', default: 'ReservedDetail')}" />
+        <title><g:message code="default.edit.label" args="[entityName]" /></title>
     </head>
     <body>
         <div class="nav">
-            <span class="menuButton"><a class="home" href="${resource(dir:'')}">Home</a></span>
-            <span class="menuButton"><g:link class="list" action="list">ReservedDetail List</g:link></span>
-            <span class="menuButton"><g:link class="create" action="create">New ReservedDetail</g:link></span>
+            <span class="menuButton"><a class="home" href="${resource(dir: '')}">Home</a></span>
+            <span class="menuButton"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
+            <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
         </div>
         <div class="body">
-            <h1>Edit ReservedDetail</h1>
+            <h1><g:message code="default.edit.label" args="[entityName]" /></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -23,99 +24,108 @@
             </div>
             </g:hasErrors>
             <g:form method="post" >
-                <input type="hidden" name="id" value="${reservedDetailInstance?.id}" />
-                <input type="hidden" name="version" value="${reservedDetailInstance?.version}" />
+                <g:hiddenField name="id" value="${reservedDetailInstance?.id}" />
+                <g:hiddenField name="version" value="${reservedDetailInstance?.version}" />
                 <div class="dialog">
                     <table>
                         <tbody>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="identificationNumber">Identification Number:</label>
+                                  <label for="identificationNumber"><g:message code="reservedDetail.identificationNumber.label" default="Identification Number" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:reservedDetailInstance,field:'identificationNumber','errors')}">
-                                    <input type="text" id="identificationNumber" name="identificationNumber" value="${fieldValue(bean:reservedDetailInstance,field:'identificationNumber')}"/>
+                                <td valign="top" class="value ${hasErrors(bean: reservedDetailInstance, field: 'identificationNumber', 'errors')}">
+                                    <g:textField name="identificationNumber" value="${reservedDetailInstance?.identificationNumber}" />
                                 </td>
-                            </tr> 
+                            </tr>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="driverName">Driver Name:</label>
+                                  <label for="driverName"><g:message code="reservedDetail.driverName.label" default="Driver Name" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:reservedDetailInstance,field:'driverName','errors')}">
-                                    <input type="text" id="driverName" name="driverName" value="${fieldValue(bean:reservedDetailInstance,field:'driverName')}"/>
+                                <td valign="top" class="value ${hasErrors(bean: reservedDetailInstance, field: 'driverName', 'errors')}">
+                                    <g:textField name="driverName" value="${reservedDetailInstance?.driverName}" />
                                 </td>
-                            </tr> 
+                            </tr>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="driverAge">Driver Age:</label>
+                                  <label for="driverAge"><g:message code="reservedDetail.driverAge.label" default="Driver Age" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:reservedDetailInstance,field:'driverAge','errors')}">
-                                    <g:select optionKey="id" from="${DriverAgeList.list()}" name="driverAge.id" value="${reservedDetailInstance?.driverAge?.id}" ></g:select>
+                                <td valign="top" class="value ${hasErrors(bean: reservedDetailInstance, field: 'driverAge', 'errors')}">
+                                    <g:select name="driverAge.id" from="${DriverAgeList.list()}" optionKey="id" value="${reservedDetailInstance?.driverAge?.id}"  />
                                 </td>
-                            </tr> 
+                            </tr>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="phoneNumber">Phone Number:</label>
+                                  <label for="phoneNumber"><g:message code="reservedDetail.phoneNumber.label" default="Phone Number" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:reservedDetailInstance,field:'phoneNumber','errors')}">
-                                    <input type="text" id="phoneNumber" name="phoneNumber" value="${fieldValue(bean:reservedDetailInstance,field:'phoneNumber')}"/>
+                                <td valign="top" class="value ${hasErrors(bean: reservedDetailInstance, field: 'phoneNumber', 'errors')}">
+                                    <g:textField name="phoneNumber" value="${reservedDetailInstance?.phoneNumber}" />
                                 </td>
-                            </tr> 
+                            </tr>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="pickupCity">Pickup City:</label>
+                                  <label for="pickupCity"><g:message code="reservedDetail.pickupCity.label" default="Pickup City" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:reservedDetailInstance,field:'pickupCity','errors')}">
-                                    <g:select optionKey="id" from="${City.list()}" name="pickupCity.id" value="${reservedDetailInstance?.pickupCity?.id}" ></g:select>
+                                <td valign="top" class="value ${hasErrors(bean: reservedDetailInstance, field: 'pickupCity', 'errors')}">
+                                    <g:select name="pickupCity.id" from="${City.list()}" optionKey="id" value="${reservedDetailInstance?.pickupCity?.id}"  />
                                 </td>
-                            </tr> 
+                            </tr>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="dropoffCity">Dropoff City:</label>
+                                  <label for="dropoffCity"><g:message code="reservedDetail.dropoffCity.label" default="Dropoff City" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:reservedDetailInstance,field:'dropoffCity','errors')}">
-                                    <g:select optionKey="id" from="${City.list()}" name="dropoffCity.id" value="${reservedDetailInstance?.dropoffCity?.id}" ></g:select>
+                                <td valign="top" class="value ${hasErrors(bean: reservedDetailInstance, field: 'dropoffCity', 'errors')}">
+                                    <g:select name="dropoffCity.id" from="${City.list()}" optionKey="id" value="${reservedDetailInstance?.dropoffCity?.id}"  />
                                 </td>
-                            </tr> 
+                            </tr>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="pickupDate">Pickup Date:</label>
+                                  <label for="pickupDate"><g:message code="reservedDetail.pickupDate.label" default="Pickup Date" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:reservedDetailInstance,field:'pickupDate','errors')}">
-                                    <g:datePicker name="pickupDate" value="${reservedDetailInstance?.pickupDate}" precision="minute" ></g:datePicker>
+                                <td valign="top" class="value ${hasErrors(bean: reservedDetailInstance, field: 'pickupDate', 'errors')}">
+                                    <g:datePicker name="pickupDate" precision="day" value="${reservedDetailInstance?.pickupDate}"  />
                                 </td>
-                            </tr> 
+                            </tr>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="dropoffDate">Dropoff Date:</label>
+                                  <label for="dropoffDate"><g:message code="reservedDetail.dropoffDate.label" default="Dropoff Date" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:reservedDetailInstance,field:'dropoffDate','errors')}">
-                                    <g:datePicker name="dropoffDate" value="${reservedDetailInstance?.dropoffDate}" precision="minute" ></g:datePicker>
+                                <td valign="top" class="value ${hasErrors(bean: reservedDetailInstance, field: 'dropoffDate', 'errors')}">
+                                    <g:datePicker name="dropoffDate" precision="day" value="${reservedDetailInstance?.dropoffDate}"  />
                                 </td>
-                            </tr> 
+                            </tr>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="car">Car:</label>
+                                  <label for="status"><g:message code="reservedDetail.status.label" default="Status" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:reservedDetailInstance,field:'car','errors')}">
-                                    <g:select optionKey="id" from="${CarStock.list()}" name="car.id" value="${reservedDetailInstance?.car?.id}" ></g:select>
+                                <td valign="top" class="value ${hasErrors(bean: reservedDetailInstance, field: 'status', 'errors')}">
+                                    <g:select name="status.id" from="${ReservStatus.list()}" optionKey="id" value="${reservedDetailInstance?.status?.id}"  />
                                 </td>
-                            </tr> 
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="car"><g:message code="reservedDetail.car.label" default="Car" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: reservedDetailInstance, field: 'car', 'errors')}">
+                                    <g:select name="car.id" from="${CarStock.list()}" optionKey="id" value="${reservedDetailInstance?.car?.id}"  />
+                                </td>
+                            </tr>
                         
                         </tbody>
                     </table>
                 </div>
                 <div class="buttons">
-                    <span class="button"><g:actionSubmit class="save" value="Update" /></span>
-                    <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" value="Delete" /></span>
+                    <span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" /></span>
+                    <span class="button"><g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" /></span>
                 </div>
             </g:form>
         </div>

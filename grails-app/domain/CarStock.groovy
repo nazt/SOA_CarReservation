@@ -1,12 +1,7 @@
 class CarStock {
-//	static belongsTo = [colour:Colour,brand:CarBrand,engine:Engine,fuel:Fuel,type:CarType,gear:Gear]
+	static belongsTo = [colour:Colour,brand:CarBrand,engine:Engine,fuel:Fuel,type:CarType,gear:Gear]
 	static hasMany = [revervedDetail:ReservedDetail]
-	Colour colour
-	CarBrand brand
-	Engine engine
-	Fuel fuel
-	CarType type
-	Gear gear
+static xmlTransients = ['colour','brand','engine','fuel','type','gear']
 	String model
 	String carRegistration
 	Boolean reserved

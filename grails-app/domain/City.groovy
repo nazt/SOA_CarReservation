@@ -3,7 +3,7 @@ class City {
 	String address
     static constraints = {
 		name()
-		address()
+		address(nullable:true)
     }
 	String toString()
 	{
