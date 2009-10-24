@@ -86,6 +86,13 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name"><g:message code="carStock.pickupCity.label" default="Pickup City" /></td>
+                            
+                            <td valign="top" class="value"><g:link controller="city" action="show" id="${carStockInstance?.pickupCity?.id}">${carStockInstance?.pickupCity?.encodeAsHTML()}</g:link></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="carStock.rate.label" default="Rate" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: carStockInstance, field: "rate")}</td>

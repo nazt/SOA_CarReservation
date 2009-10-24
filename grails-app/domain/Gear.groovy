@@ -6,6 +6,6 @@ class Gear {
     }
 	String toString()
 	{
-		return "$id - $gear"
+		return "$gear"
 	}
 }

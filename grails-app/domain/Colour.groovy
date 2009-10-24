@@ -5,6 +5,6 @@ class Colour {
     }
 	String toString()
 	{
-		return "$id - $colour"
+		return "$colour"
 	}
 }

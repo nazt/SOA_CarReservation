@@ -101,6 +101,15 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                    <label for="pickupCity"><g:message code="carStock.pickupCity.label" default="Pickup City" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: carStockInstance, field: 'pickupCity', 'errors')}">
+                                    <g:select name="pickupCity.id" from="${City.list()}" optionKey="id" value="${carStockInstance?.pickupCity?.id}"  />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                     <label for="rate"><g:message code="carStock.rate.label" default="Rate" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: carStockInstance, field: 'rate', 'errors')}">

@@ -5,6 +5,6 @@ class CarBrand {
     }
 	String toString()
 	{
-		return "$id - $brand"
+		return "$brand"
 	}
 }

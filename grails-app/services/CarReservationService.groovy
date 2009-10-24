@@ -33,9 +33,54 @@ class CarReservationService {
 		println "Hello, " + name as String
 		return "Hello, " + name as String
 	}
+	String getColorFromId(Integer id)
+	{
+		def result= CarStock.find('from CarStock as c where c.id = '+id);
+		return result.colour
+	}
+	String getColourFromId(Integer id)
+	{
+		def result= CarStock.find('from CarStock as c where c.id = '+id);
+		return result.colour
+	}	
+	String getFuelFromId(Integer id)
+	{
+		def result= CarStock.find('from CarStock as c where c.id = '+id);
+		return result.fuel
+	}	
+	
+	String getEngineFromId(Integer id)
+	{
+		def result= CarStock.find('from CarStock as c where c.id = '+id);
+		return result.engine
+	}
+	String getCarBrandFromId(Integer id)
+	{
+		def result= CarStock.find('from CarStock as c where c.id = '+id);
+		return result.brand
+	}
+	String getGearFromId(Integer id)
+	{
+		def result= CarStock.find('from CarStock as c where c.id = '+id);
+		return result.gear
+	}	
+	CarStock[] searchCar(String brand,String gear,String colour , String carType, String fuel )
+	{
+ 
+	 	def avail_stock= CarStock.findAll('from CarStock as c where c.reserved = false') as CarStock[]
+		def result_stock=[]
+		avail_stock.each {  
+			if(   (it.colour.toString()==colour || colour.toUpperCase()=='ANY' ) && (it.brand.toString()==brand || brand.toUpperCase()=='ANY' ) && (it.gear.toString()==brand || gear.toUpperCase()=='ANY' )  && (it.type.toString()==carType || carType.toUpperCase()=='ANY' )  && (it.fuel.toString()==fuel || fuel.toUpperCase()=='ANY' ) )
+			{
+				result_stock << it
+			} 
+		}
+/*		println result_stock*/
+		return result_stock as CarStock[]
+	}
 	CarStock[] getCarStock()
 	{
-		return CarStock.list() as CarStock[]
+		return CarStock.findAll('from CarStock as c where c.reserved = false') as CarStock[]
 	}
 	String reservCar(String ident,String name,Integer ageId,String phone,Integer pickCityId,Integer dropCityId,Integer carStockId)
 	{
@@ -65,8 +110,8 @@ class CarReservationService {
 /*		def reservDetail=new ReservedDetail(identificationNumber:ident,driverName:name,driverAge:age,pickupCity:pickCity,dropoffCity:dropCity,status:rStatus).save()
 */
  
-
-		def reservedDetailInstance = new ReservedDetail([pickupDate_hour:12,  pickupDate_year:2009, pickupDate_day:21, pickupDate:struct,status:rStatus ,   dropoffCity:dropCity,   car:car,   identificationNumber:1159900101111,   driverName:'Nat Weerawan', pickupCity:pickCity, dropoffDate:new Date() , phoneNumber:'0891278553', driverAge:age,   pickupDate:new Date()])
+/*pickupDate_hour:12,  pickupDate_year:2009, pickupDate_day:21, pickupDate:struct*/
+		def reservedDetailInstance = new ReservedDetail([status:rStatus ,   dropoffCity:dropCity,   car:car,   identificationNumber:1159900101111,   driverName:'Nat Weerawan', pickupCity:pickCity, dropoffDate:new Date() , phoneNumber:'0891278553', driverAge:age,   pickupDate:new Date()])
 		println reservedDetailInstance
 		if (reservedDetailInstance.save() ) {
 			println "OK SAVE!"

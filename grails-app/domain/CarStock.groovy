@@ -1,7 +1,7 @@
 class CarStock {
-	static belongsTo = [colour:Colour,brand:CarBrand,engine:Engine,fuel:Fuel,type:CarType,gear:Gear]
+	static belongsTo = [pickupCity:City,colour:Colour,brand:CarBrand,engine:Engine,fuel:Fuel,type:CarType,gear:Gear]
 	static hasMany = [revervedDetail:ReservedDetail]
-static xmlTransients = ['colour','brand','engine','fuel','type','gear']
+static xmlTransients = ['colour','brand','engine','fuel','type','gear','pickupCity']
 	String model
 	String carRegistration
 	Boolean reserved
@@ -19,6 +19,7 @@ static xmlTransients = ['colour','brand','engine','fuel','type','gear']
 		engine()
 		fuel()
 		carRegistration(nullable:false)
+		pickupCity()
 		rate()
 		reserved()
     }

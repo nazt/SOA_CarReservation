@@ -5,6 +5,6 @@ class Engine {
     }
 	String toString()
 	{
-		return "$id - $engine"
+		return "$engine"
 	}
 }

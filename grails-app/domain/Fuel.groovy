@@ -5,6 +5,6 @@ class Fuel {
     }
 	String toString()
 	{
-		return "$id - $fuel"
+		return "$fuel"
 	}
 }
