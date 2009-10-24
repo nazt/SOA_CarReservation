@@ -16,6 +16,10 @@ class CarReservationService {
 	{
 		return Engine.list() as Engine[] 
 	}
+	City[] getCityList()
+	{
+		return City.list() as City[]
+	}
 	CarBrand[] getCarBrandList()
 	{
 		return CarBrand.list() as CarBrand[]
@@ -69,6 +73,7 @@ class CarReservationService {
 		def result= CarStock.find('from CarStock as c where c.id = '+id);
 		return result.pickupCity
 	}
+
 	CarStock[] searchCar(String brand,String gear,String colour , String carType, String fuel ,String pickupCity)
 	{
  

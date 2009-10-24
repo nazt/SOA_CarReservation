@@ -1,12 +1,12 @@
 class City {
-	String name
+	String city
 	String address
     static constraints = {
-		name()
+		city()
 		address(nullable:true)
     }
 	String toString()
 	{
-		return "$name"
+		return "$city"
 	}
 }
