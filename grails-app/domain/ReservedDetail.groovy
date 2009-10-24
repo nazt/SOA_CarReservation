@@ -1,5 +1,5 @@
 class ReservedDetail {
-	static belongsTo = [car:CarStock,driverAge:DriverAgeList,pickupCity:City,dropoffCity:City,status:ReservStatus]	
+	static belongsTo = [car:CarStock,driverAge:DriverAgeList, dropoffCity:City,status:ReservStatus]	
 	String identificationNumber
 	String driverName
 	String phoneNumber
@@ -12,7 +12,6 @@ class ReservedDetail {
  		driverName()
 		driverAge()
 		phoneNumber()
-		pickupCity()
 		dropoffCity()
 		pickupDate()
 		dropoffDate()
