@@ -64,13 +64,18 @@ class CarReservationService {
 		def result= CarStock.find('from CarStock as c where c.id = '+id);
 		return result.gear
 	}	
-	CarStock[] searchCar(String brand,String gear,String colour , String carType, String fuel )
+	String getPickupCityFromId(Integer id)
+	{
+		def result= CarStock.find('from CarStock as c where c.id = '+id);
+		return result.pickupCity
+	}
+	CarStock[] searchCar(String brand,String gear,String colour , String carType, String fuel ,String pickupCity)
 	{
  
 	 	def avail_stock= CarStock.findAll('from CarStock as c where c.reserved = false') as CarStock[]
 		def result_stock=[]
 		avail_stock.each {  
-			if(   (it.colour.toString()==colour || colour.toUpperCase()=='ANY' ) && (it.brand.toString()==brand || brand.toUpperCase()=='ANY' ) && (it.gear.toString()==brand || gear.toUpperCase()=='ANY' )  && (it.type.toString()==carType || carType.toUpperCase()=='ANY' )  && (it.fuel.toString()==fuel || fuel.toUpperCase()=='ANY' ) )
+			if(   (it.colour.toString()==colour || colour.toUpperCase()=='ANY' ) && (it.brand.toString()==brand || brand.toUpperCase()=='ANY' ) && (it.gear.toString()==brand || gear.toUpperCase()=='ANY' )  && (it.type.toString()==carType || carType.toUpperCase()=='ANY' )  && (it.fuel.toString()==fuel || fuel.toUpperCase()=='ANY' ) && (it.pickupCity.toString()==pickupCity || pickupCity.toUpperCase()=='ANY' ) )
 			{
 				result_stock << it
 			} 
